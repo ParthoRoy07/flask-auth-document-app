@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reset Password - AI Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="ai-body">
+
+    <div class="ai-sidebar">
+        <h2 class="logo">Vision<span>UI</span></h2>
+        <ul>
+            <li><a href="/dashboard">🏠 Dashboard</a></li>
+            <li><a href="/grades">📊 Grades</a></li>
+            <li><a href="/reset" class="active">🔐 Reset Password</a></li>
+            <li><a href="/logout">🚪 Logout</a></li>
+        </ul>
+    </div>
+
+    <div class="ai-main">
+        <div class="ai-header">
+            <h1>Reset Password 🔐</h1>
+            <p>Change your account password</p>
+        </div>
+
+        <div class="ai-cards grades-cards" style="max-width:400px; margin:auto; flex-direction:column;">
+            <form method="POST" class="ai-card glow-green">
+                <h3>New Password</h3>
+                <div class="input-group">
+                    <input type="password" name="password" required>
+                    <label>Enter New Password</label>
+                </div>
+                <button type="submit" class="login-btn">Update</button>
+                <p style="margin-top:10px; font-size:14px;">
+                    <a href="/dashboard">Back to Dashboard</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

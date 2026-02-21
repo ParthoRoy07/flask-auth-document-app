@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grades - AI Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="ai-body">
+
+    <div class="ai-sidebar">
+        <h2 class="logo">Vision<span>UI</span></h2>
+        <ul>
+            <li><a href="/dashboard">🏠 Dashboard</a></li>
+            <li><a href="/grades" class="active">📊 Grades</a></li>
+            <li><a href="/reset">🔐 Reset Password</a></li>
+            <li><a href="/logout">🚪 Logout</a></li>
+        </ul>
+    </div>
+
+    <div class="ai-main">
+        <div class="ai-header">
+            <h1>Your Grades 📊</h1>
+            <p>Overview of your performance</p>
+        </div>
+
+        {% if grades %}
+        <div class="ai-cards grades-cards">
+            {% for grade in grades %}
+            <div class="ai-card glow-purple">
+                <h3>{{ grade.subject }}</h3>
+                <p>{{ grade.marks }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p style="color:#f87171; text-align:center; margin-top:50px;">No grades available yet.</p>
+        {% endif %}
+
+        <a href="/dashboard" class="dash-btn" style="margin-top:20px;">⬅ Back to Dashboard</a>
+    </div>
+
+</body>
+</html>
